@@ -1,4 +1,4 @@
-FROM ddsderek/nas-tools:debian-base
+FROM accors/nas-tools-base:debian-base
 
 RUN set -xe && \
     export DEBIAN_FRONTEND="noninteractive" && \
@@ -21,7 +21,6 @@ RUN set -xe && \
         fuse3 \
         xvfb \
         inotify-tools \
-        npm \
         dumb-init \
         ffmpeg \
         redis \
@@ -37,7 +36,7 @@ RUN set -xe && \
         chromium-driver && \
     ln -sf /usr/bin/chromedriver /usr/lib/chromium/chromedriver && \
     # PM2
-    npm install pm2 -g && \
+    yarn global add pm2 && \
     # Rclone
     curl https://rclone.org/install.sh | bash && \
     # Minio
