@@ -1,4 +1,4 @@
-FROM accors/nas-tools-base:debian-base
+FROM accors/nas-tools:debian-base
 
 RUN set -xe && \
     export DEBIAN_FRONTEND="noninteractive" && \
